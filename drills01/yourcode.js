@@ -46,12 +46,6 @@ function getAllNamesShorterThan(array,value){
     //return array
     return returnedNameList;
 }
-array = [
-    DataTransferItem,
-    itemObject,
-    item
-
-]
 
 // - input: 
 // 		[
@@ -81,8 +75,8 @@ array = [
 function makeLabel(contact){
     var address = "";
     var line1 = contact.greeting + " " + contact.givenName + " " + contact.familyName;
-    var line2 = contact.streetNumber + " " + contact.streetName;
-    var line3 = contact.city + ", " + contact.state + " " + contat.zip;
+    var line2 = contact['home address']['streetNumber'] + " " + contact['home address']['streetName'];
+    var line3 = contact['home address']['city'] + ", " + contact['home address']['state'] + " " + contact['home address']['zip'];
     address = line1 + "\n" + line2 + "\n" + line3;
     return address;
 }
