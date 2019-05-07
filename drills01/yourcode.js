@@ -46,12 +46,43 @@ function getAllNamesShorterThan(array,value){
     //return array
     return returnedNameList;
 }
+array = [
+    DataTransferItem,
+    itemObject,
+    item
+
+]
+
+// - input: 
+// 		[
+//   {
+//     "familyName": "McGee",
+//     "givenName": "Chuckles",
+//     "greeting": "Miss.",
+//     "age": 28,
+//     "height": 165,
+//     "colors": {
+//       "eye": "green",
+//       "hair": "green"
+//     },
+//     "home address": {
+//       "streetNumber": "12345",
+//       "streetName": "Any St",
+//       "state": "Mo",
+//       "zip": 63102,
+//       "city": "Kansas City"
+//     }
+//   }
+// ]
+// 	- return "Miss. Chuckles McGee\n12345 Any St\nKansas City, Mo 63102"
+
+
 
 function makeLabel(contact){
     var address = "";
-    var line1 = contact[0][greeting] + " " + contact[0].givenName + " " + contact[0].familyName;
-    var line2 = contact[1].streetNumber + " " + contact[1].streetName;
-    var line3 = contact[1].city + ", " + contact[1].state + " " + contat[1].zip;
+    var line1 = contact.greeting + " " + contact.givenName + " " + contact.familyName;
+    var line2 = contact.streetNumber + " " + contact.streetName;
+    var line3 = contact.city + ", " + contact.state + " " + contat.zip;
     address = line1 + "\n" + line2 + "\n" + line3;
     return address;
 }
