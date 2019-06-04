@@ -101,13 +101,22 @@ function findMode(array){
     mode = 0;
     console.log("finished journal", journal);
     //test by using for .. in, or basic for loop
-    Object.keys(journal).forEach(function(keyTheNumber){
-        if (journal[keyTheNumber]>max){
-            max = journal[keyTheNumber];
-            mode = keyTheNumber;
+    for (var theNumber in journal){
+        if(journal[theNumber]>max){
+            max=journal[theNumber];
+            mode = theNumber;
         }
-    })
+    }
     return mode;
+    
+    //also OK
+    // Object.keys(journal).forEach(function(keyTheNumber){
+    //     if (journal[keyTheNumber]>max){
+    //         max = journal[keyTheNumber];
+    //         mode = keyTheNumber;
+    //     }
+    // })
+    // return mode;
 }
 
 
