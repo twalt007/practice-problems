@@ -59,14 +59,48 @@ function changeElements(elClass){
 
 }
 
-function appendTextToElement(){
+// - appendTextToElement: given a particular element, replace its text with the original text plus the word 2nd parameter given.
+// 	- For example, if you got changeElements('.helloElements','hello'), all elements with a class of helloElements would have their text concatenated with "hello"
+//  	- For example, if the text of the element was "yo", it would be changed to "yohello"`,
+
+function appendTextToElement(el,text){
+//method1 .text
+    // $(el).each(function(){
+    //     var getText = $(this).text();
+    //     console.log("getText",getText);
+    //     var newText = getText+text;
+    //     console.log("newText", newText)
+    //     $(this).text(newText);
+    // })
+
+
+//method2 append
+$(el).each(function(){
+    $(this).append(text);
+})
 
 }
 
-function addClass(){
+// - addClass: Make a function that takes in 2 strings.  The first selector it looks for, the 2nd it adds as a class
+// 	- For example, if you had addClass(".haha","hehe"), then every element
+// 	- with a class of haha would now also have a class of hehe.
+//   Additionally, return the number of elements so changed`,
+
+
+function addClass(string1,string2){
+    var counter = 0;
+    $(string1).each(function(){
+        $(this).addClass(string2);
+        counter++
+    })
+return counter;
+
+
 }
-
-function removeElements(){
-
+//- removeElements: given a particular selector, remove any element that matches that selector
+function removeElements(selector){
+    $(selector).each(function(){
+        $(this).remove();
+    })
 }
 
